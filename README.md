@@ -7,7 +7,9 @@ Primeira versão funcional de um editor de currículos com preview em tempo real
 - Página inicial responsiva
 - Editor de dados pessoais, resumo, experiências, formação, competências e idiomas
 - Preview em tempo real
-- Três estilos visuais: Classic, Modern e Executive
+- Sete estilos visuais: Classic, Modern, Executive, Minimal, Corporate, Creative e Tech
+- Seleção do idioma do currículo: Português, Inglês e Espanhol
+- Ocultação automática de campos e seções vazias
 - Salvamento automático no navegador (`localStorage`)
 - Botão para imprimir ou salvar em PDF
 - Exemplo preenchido para demonstração

@@ -75,6 +75,17 @@
               <option value="classic">Classic</option>
               <option value="modern">Modern</option>
               <option value="executive">Executive</option>
+              <option value="minimal">Minimal</option>
+              <option value="corporate">Corporate</option>
+              <option value="creative">Creative</option>
+              <option value="tech">Tech</option>
+            </select>
+          </label>
+          <label class="select-label">Idioma do CV
+            <select id="cvLanguageSelect">
+              <option value="pt">Português</option>
+              <option value="en">English</option>
+              <option value="es">Español</option>
             </select>
           </label>
           <button class="button button-outline" id="clearBtn">Limpar</button>
@@ -144,26 +155,26 @@
           <div class="preview-toolbar"><span>Preview</span><span class="autosave-status" id="saveStatus">Salvo automaticamente</span></div>
           <article class="resume template-classic" id="resumePreview">
             <header class="resume-header">
-              <h1 id="previewName">Seu nome</h1>
-              <p id="previewTitle">Seu título profissional</p>
-              <div class="contact-line" id="previewContact">Localização • E-mail • Telefone</div>
+              <h1 id="previewName" hidden></h1>
+              <p id="previewTitle" hidden></p>
+              <div class="contact-line" id="previewContact" hidden></div>
               <div class="contact-line" id="previewLinkedin"></div>
             </header>
-            <section class="resume-section" id="summarySection">
-              <h2>Resumo profissional</h2>
-              <p id="previewSummary">Escreva um resumo profissional para apresentar sua experiência, especialidades e principais diferenciais.</p>
+            <section class="resume-section" id="summarySection" hidden>
+              <h2 data-i18n="summary">Resumo profissional</h2>
+              <p id="previewSummary"></p>
             </section>
-            <section class="resume-section" id="experienceSection">
-              <h2>Experiência profissional</h2>
-              <div id="previewExperiences"><p class="placeholder-copy">Adicione sua primeira experiência profissional.</p></div>
+            <section class="resume-section" id="experienceSection" hidden>
+              <h2 data-i18n="experience">Experiência profissional</h2>
+              <div id="previewExperiences"></div>
             </section>
-            <section class="resume-section" id="educationSection">
-              <h2>Formação</h2>
-              <div id="previewEducation"><p class="placeholder-copy">Adicione sua formação acadêmica.</p></div>
+            <section class="resume-section" id="educationSection" hidden>
+              <h2 data-i18n="education">Formação</h2>
+              <div id="previewEducation"></div>
             </section>
-            <section class="resume-section two-columns">
-              <div id="skillsSection"><h2>Competências</h2><div class="tag-list" id="previewSkills"><span>Adicione competências</span></div></div>
-              <div id="languagesSection"><h2>Idiomas</h2><div class="tag-list" id="previewLanguages"><span>Adicione idiomas</span></div></div>
+            <section class="resume-section two-columns" id="additionalSection" hidden>
+              <div id="skillsSection" hidden><h2 data-i18n="skills">Competências</h2><div class="tag-list" id="previewSkills"></div></div>
+              <div id="languagesSection" hidden><h2 data-i18n="languages">Idiomas</h2><div class="tag-list" id="previewLanguages"></div></div>
             </section>
           </article>
         </aside>
