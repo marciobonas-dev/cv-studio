@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Editor de currículos com preview em tempo real.">
+  <title>CV Studio | Construa um currículo mais atrativo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#inicio" aria-label="CV Studio - início">
+      <span class="brand-mark">CV</span>
+      <span>CV Studio</span>
+    </a>
+    <nav class="topnav" aria-label="Navegação principal">
+      <a href="#como-funciona">Como funciona</a>
+      <a href="#editor">Editor</a>
+      <a href="#principios">Nossa proposta</a>
+    </nav>
+    <button class="button button-small button-outline" id="loadExampleBtn">Carregar exemplo</button>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-content">
+        <span class="eyebrow">Currículo mais claro. História sempre verdadeira.</span>
+        <h1>Transforme sua experiência em um CV que chama atenção.</h1>
+        <p>Crie, organize e visualize seu currículo em tempo real. Esta primeira versão funciona totalmente no navegador e não envia seus dados para nenhum servidor.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#editor">Criar meu CV</a>
+          <button class="button button-secondary" id="exampleHeroBtn">Ver um exemplo</button>
+        </div>
+        <ul class="trust-list" aria-label="Benefícios">
+          <li>✓ Preview em tempo real</li>
+          <li>✓ Salvo no seu navegador</li>
+          <li>✓ Pronto para imprimir em PDF</li>
+        </ul>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="floating-card card-one"><strong>Resumo profissional</strong><span>Claro, direto e relevante</span></div>
+        <div class="floating-card card-two"><strong>Experiências</strong><span>Impacto sem inventar resultados</span></div>
+        <div class="resume-mockup">
+          <div class="mockup-head"></div>
+          <div class="mockup-title"></div>
+          <div class="mockup-line long"></div>
+          <div class="mockup-line"></div>
+          <div class="mockup-section"></div>
+          <div class="mockup-line long"></div>
+          <div class="mockup-line long"></div>
+          <div class="mockup-line short"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="steps" id="como-funciona">
+      <article><span>01</span><h2>Preencha</h2><p>Adicione seus dados, resumo, experiências, formação e competências.</p></article>
+      <article><span>02</span><h2>Revise</h2><p>Acompanhe o resultado no preview e deixe o conteúdo objetivo e fácil de ler.</p></article>
+      <article><span>03</span><h2>Exporte</h2><p>Imprima ou salve o currículo final em PDF diretamente pelo navegador.</p></article>
+    </section>
+
+    <section class="workspace" id="editor">
+      <div class="workspace-heading">
+        <div>
+          <span class="eyebrow">MVP 1</span>
+          <h2>Editor de currículo</h2>
+          <p>Preencha os campos. O preview será atualizado automaticamente.</p>
+        </div>
+        <div class="workspace-actions">
+          <label class="select-label">Modelo
+            <select id="templateSelect">
+              <option value="classic">Classic</option>
+              <option value="modern">Modern</option>
+              <option value="executive">Executive</option>
+            </select>
+          </label>
+          <button class="button button-outline" id="clearBtn">Limpar</button>
+          <button class="button button-primary" id="printBtn">Salvar em PDF</button>
+        </div>
+      </div>
+
+      <div class="workspace-grid">
+        <form class="editor-panel" id="cvForm">
+          <div class="progress-wrap">
+            <div class="progress-info"><span>Progresso do CV</span><strong id="progressText">0%</strong></div>
+            <div class="progress-track"><span id="progressBar"></span></div>
+          </div>
+
+          <details open>
+            <summary>Dados pessoais</summary>
+            <div class="form-grid">
+              <label class="field field-full">Nome completo<input id="fullName" data-save type="text" placeholder="Ex.: Marcio Bonas"></label>
+              <label class="field">Título profissional<input id="jobTitle" data-save type="text" placeholder="Ex.: Talent Acquisition Partner"></label>
+              <label class="field">Localização<input id="location" data-save type="text" placeholder="Ex.: São Paulo, Brasil"></label>
+              <label class="field">E-mail<input id="email" data-save type="email" placeholder="nome@email.com"></label>
+              <label class="field">Telefone<input id="phone" data-save type="tel" placeholder="+55 11 99999-9999"></label>
+              <label class="field field-full">LinkedIn<input id="linkedin" data-save type="text" placeholder="linkedin.com/in/seuperfil"></label>
+            </div>
+          </details>
+
+          <details open>
+            <summary>Resumo profissional</summary>
+            <label class="field">Conte sua trajetória de forma objetiva
+              <textarea id="summary" data-save rows="7" maxlength="900" placeholder="Quem você é profissionalmente, sua especialidade, escopo e o valor que pode gerar."></textarea>
+              <span class="counter"><span id="summaryCount">0</span>/900</span>
+            </label>
+            <button class="ai-button" type="button" data-ai-placeholder="summary">✨ Melhorar com IA <span>em breve</span></button>
+          </details>
+
+          <details open>
+            <summary>Experiência profissional</summary>
+            <div id="experienceFields"></div>
+            <button class="add-button" id="addExperienceBtn" type="button">+ Adicionar experiência</button>
+          </details>
+
+          <details>
+            <summary>Formação</summary>
+            <div class="form-grid">
+              <label class="field">Curso<input id="degree" data-save type="text" placeholder="Ex.: Administração"></label>
+              <label class="field">Instituição<input id="school" data-save type="text" placeholder="Nome da instituição"></label>
+              <label class="field">Período<input id="educationPeriod" data-save type="text" placeholder="Ex.: 2018 – 2022"></label>
+            </div>
+          </details>
+
+          <details>
+            <summary>Competências e idiomas</summary>
+            <label class="field">Competências
+              <input id="skills" data-save type="text" placeholder="Recrutamento, Sourcing, Stakeholders">
+              <small>Separe as competências por vírgulas.</small>
+            </label>
+            <label class="field">Idiomas
+              <input id="languages" data-save type="text" placeholder="Português nativo, Inglês avançado">
+              <small>Separe os idiomas por vírgulas.</small>
+            </label>
+          </details>
+
+          <div class="privacy-note"><strong>Privacidade no MVP:</strong> os dados são armazenados somente no navegador deste dispositivo por meio de localStorage.</div>
+        </form>
+
+        <aside class="preview-panel">
+          <div class="preview-toolbar"><span>Preview</span><span class="autosave-status" id="saveStatus">Salvo automaticamente</span></div>
+          <article class="resume template-classic" id="resumePreview">
+            <header class="resume-header">
+              <h1 id="previewName">Seu nome</h1>
+              <p id="previewTitle">Seu título profissional</p>
+              <div class="contact-line" id="previewContact">Localização • E-mail • Telefone</div>
+              <div class="contact-line" id="previewLinkedin"></div>
+            </header>
+            <section class="resume-section" id="summarySection">
+              <h2>Resumo profissional</h2>
+              <p id="previewSummary">Escreva um resumo profissional para apresentar sua experiência, especialidades e principais diferenciais.</p>
+            </section>
+            <section class="resume-section" id="experienceSection">
+              <h2>Experiência profissional</h2>
+              <div id="previewExperiences"><p class="placeholder-copy">Adicione sua primeira experiência profissional.</p></div>
+            </section>
+            <section class="resume-section" id="educationSection">
+              <h2>Formação</h2>
+              <div id="previewEducation"><p class="placeholder-copy">Adicione sua formação acadêmica.</p></div>
+            </section>
+            <section class="resume-section two-columns">
+              <div id="skillsSection"><h2>Competências</h2><div class="tag-list" id="previewSkills"><span>Adicione competências</span></div></div>
+              <div id="languagesSection"><h2>Idiomas</h2><div class="tag-list" id="previewLanguages"><span>Adicione idiomas</span></div></div>
+            </section>
+          </article>
+        </aside>
+      </div>
+    </section>
+
+    <section class="principles" id="principios">
+      <div><span class="eyebrow">Princípio do produto</span><h2>A IA não cria sua carreira.</h2><p>Ela ajudará você a apresentar melhor a carreira que realmente construiu. Nenhuma habilidade, resultado ou experiência deverá ser inventada.</p></div>
+      <div class="future-card"><span>Próxima evolução</span><h3>Análise CV × Vaga</h3><p>Evidências encontradas, lacunas, palavras-chave e pontos que precisam ser validados.</p><button class="button button-secondary" disabled>Disponível na versão com IA</button></div>
+    </section>
+  </main>
+
+  <footer><strong>CV Studio</strong><span>Feito para transformar experiência real em comunicação profissional.</span></footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
