@@ -1,38 +1,32 @@
-# CV Studio — MVP 1
+# CV Studio
 
-Primeira versão funcional de um editor de currículos com preview em tempo real.
+Aplicação web para criar, personalizar, traduzir e exportar currículos profissionais.
 
-## Funcionalidades
+## Funcionalidades preservadas
 
-- Página inicial responsiva
-- Editor de dados pessoais, resumo, experiências, formação, competências e idiomas
-- Preview em tempo real
-- Sete estilos visuais: Classic, Modern, Executive, Minimal, Corporate, Creative e Tech
-- Seleção do idioma do currículo: Português, Inglês e Espanhol
-- Ocultação automática de campos e seções vazias
-- Salvamento automático no navegador (`localStorage`)
-- Botão para imprimir ou salvar em PDF
-- Exemplo preenchido para demonstração
+- Editor com preview em tempo real
+- Campos e seções vazias ocultos no CV
+- Múltiplas experiências profissionais
+- Formação, competências e idiomas
+- Salvamento automático no navegador com `localStorage`
+- Sete modelos: Classic, Modern, Executive, Minimal, Corporate, Creative e Tech
+- Galeria visual de modelos conectada ao editor
+- Tradução do conteúdo para português, inglês ou espanhol
+- Exportação por impressão/salvamento em PDF
+- Exemplo genérico, sem dados pessoais do proprietário do projeto
 - Layout responsivo para desktop e celular
 
-## Publicar no GitHub Pages
+## Arquivos
 
-1. Crie um repositório público no GitHub.
-2. Envie `index.html`, `styles.css` e `app.js` para a raiz do repositório.
-3. Em **Settings > Pages**, escolha **Deploy from a branch**.
-4. Selecione a branch `main` e a pasta `/ (root)`.
-5. Salve a configuração.
+- `index.html`: estrutura completa da aplicação
+- `styles.css`: interface e modelos do currículo
+- `app.js`: editor, preview, salvamento, templates, tradução e exportação
+- `README.md`: documentação do projeto
 
-## Importante sobre privacidade
+## Publicação no GitHub Pages
 
-Esta versão não possui backend. Os dados são armazenados somente no navegador do dispositivo por meio de `localStorage`.
+Envie os quatro arquivos para a raiz do repositório. Em **Settings > Pages**, publique a branch `main` usando a pasta `/ (root)`.
 
-## Próximas versões sugeridas
+## Privacidade
 
-- Importação estruturada de CV existente
-- Seções adicionais e reordenação
-- Exportação PDF aprimorada
-- Backend seguro
-- IA para melhoria de texto sem inventar informações
-- Análise baseada em evidências entre CV e descrição da vaga
-- Contas e histórico de versões
+Os dados digitados ficam armazenados no navegador. Quando a tradução é acionada, os campos textuais são enviados ao serviço externo MyMemory. O conteúdo traduzido deve ser revisado antes da exportação.

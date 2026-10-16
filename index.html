@@ -3,192 +3,149 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Editor de currículos com preview em tempo real.">
-  <title>CV Studio | Construa um currículo mais atrativo</title>
+  <meta name="description" content="Crie, personalize, traduza e exporte um currículo profissional.">
+  <title>CV Studio | Currículos profissionais</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="topbar">
-    <a class="brand" href="#inicio" aria-label="CV Studio - início">
-      <span class="brand-mark">CV</span>
-      <span>CV Studio</span>
+  <header class="site-header">
+    <a class="brand" href="#inicio" aria-label="CV Studio - página inicial">
+      <span class="brand-icon">CV</span><span>CV Studio</span>
     </a>
-    <nav class="topnav" aria-label="Navegação principal">
-      <a href="#como-funciona">Como funciona</a>
+    <nav class="nav-links" aria-label="Navegação principal">
+      <a href="#beneficios">Benefícios</a>
+      <a href="#modelos">Modelos</a>
       <a href="#editor">Editor</a>
       <a href="#principios">Nossa proposta</a>
     </nav>
-    <button class="button button-small button-outline" id="loadExampleBtn">Carregar exemplo</button>
+    <a class="button button-small button-dark" href="#editor">Criar meu CV</a>
   </header>
 
   <main>
     <section class="hero" id="inicio">
-      <div class="hero-content">
-        <span class="eyebrow">Currículo mais claro. História sempre verdadeira.</span>
-        <h1>Transforme sua experiência em um CV que chama atenção.</h1>
-        <p>Crie, organize e visualize seu currículo em tempo real. Esta primeira versão funciona totalmente no navegador e não envia seus dados para nenhum servidor.</p>
+      <div class="hero-copy">
+        <span class="pill">Currículo profissional, sem complicação</span>
+        <h1>Apresente sua experiência com mais <em>clareza e impacto.</em></h1>
+        <p>Crie, personalize, traduza e exporte seu currículo em um só lugar. A ferramenta organiza sua trajetória sem inventar experiências, competências ou resultados.</p>
         <div class="hero-actions">
-          <a class="button button-primary" href="#editor">Criar meu CV</a>
-          <button class="button button-secondary" id="exampleHeroBtn">Ver um exemplo</button>
+          <a class="button button-primary" href="#editor">Começar agora</a>
+          <button class="button button-ghost" id="exampleHeroBtn" type="button">Visualizar exemplo</button>
         </div>
-        <ul class="trust-list" aria-label="Benefícios">
-          <li>✓ Preview em tempo real</li>
-          <li>✓ Salvo no seu navegador</li>
-          <li>✓ Pronto para imprimir em PDF</li>
-        </ul>
+        <div class="proof-row">
+          <span>✓ Preview em tempo real</span><span>✓ 7 modelos</span><span>✓ PDF</span><span>✓ Tradução</span>
+        </div>
       </div>
-      <div class="hero-visual" aria-hidden="true">
-        <div class="floating-card card-one"><strong>Resumo profissional</strong><span>Claro, direto e relevante</span></div>
-        <div class="floating-card card-two"><strong>Experiências</strong><span>Impacto sem inventar resultados</span></div>
-        <div class="resume-mockup">
-          <div class="mockup-head"></div>
-          <div class="mockup-title"></div>
-          <div class="mockup-line long"></div>
-          <div class="mockup-line"></div>
-          <div class="mockup-section"></div>
-          <div class="mockup-line long"></div>
-          <div class="mockup-line long"></div>
-          <div class="mockup-line short"></div>
+      <div class="hero-showcase" aria-hidden="true">
+        <div class="glow glow-one"></div><div class="glow glow-two"></div>
+        <div class="sample-resume">
+          <div class="sample-top"><div class="sample-avatar">AM</div><div><b>Alex Morgan</b><span>Technology Talent Acquisition</span></div></div>
+          <div class="sample-rule"></div>
+          <small>PROFESSIONAL SUMMARY</small>
+          <i class="line full"></i><i class="line full"></i><i class="line medium"></i>
+          <small>EXPERIENCE</small>
+          <i class="line title"></i><i class="line full"></i><i class="line medium"></i>
         </div>
+        <div class="float-note note-one"><b>7 modelos</b><span>Escolha seu estilo</span></div>
+        <div class="float-note note-two"><b>3 idiomas</b><span>Português, inglês e espanhol</span></div>
       </div>
     </section>
 
-    <section class="steps" id="como-funciona">
-      <article><span>01</span><h2>Preencha</h2><p>Adicione seus dados, resumo, experiências, formação e competências.</p></article>
-      <article><span>02</span><h2>Revise</h2><p>Acompanhe o resultado no preview e deixe o conteúdo objetivo e fácil de ler.</p></article>
-      <article><span>03</span><h2>Exporte</h2><p>Imprima ou salve o currículo final em PDF diretamente pelo navegador.</p></article>
+    <section class="trust-strip" aria-label="Recursos principais">
+      <span>Conteúdo verdadeiro</span><i></i><span>Design profissional</span><i></i><span>Campos vazios ocultos</span><i></i><span>Dados salvos no navegador</span>
     </section>
 
-    <section class="workspace" id="editor">
-      <div class="workspace-heading">
-        <div>
-          <span class="eyebrow">MVP 1</span>
-          <h2>Editor de currículo</h2>
-          <p>Preencha os campos. O preview será atualizado automaticamente.</p>
-        </div>
-        <div class="workspace-actions">
-          <label class="select-label">Modelo
-            <select id="templateSelect">
-              <option value="classic">Classic</option>
-              <option value="modern">Modern</option>
-              <option value="executive">Executive</option>
-              <option value="minimal">Minimal</option>
-              <option value="corporate">Corporate</option>
-              <option value="creative">Creative</option>
-              <option value="tech">Tech</option>
-            </select>
-          </label>
-          <label class="select-label">Idioma do CV
-            <select id="cvLanguageSelect">
-              <option value="pt">Português</option>
-              <option value="en">English</option>
-              <option value="es">Español</option>
-            </select>
-          </label>
-          <button class="button button-outline" id="clearBtn">Limpar</button>
-          <button class="button button-primary" id="printBtn">Salvar em PDF</button>
-        </div>
+    <section class="benefits section" id="beneficios">
+      <div class="section-heading">
+        <span class="kicker">Por que atualizar seu CV?</span>
+        <h2>Um bom currículo torna sua trajetória fácil de entender.</h2>
+        <p>Recrutadores e gestores precisam identificar rapidamente experiência, escopo, competências e formação. O CV Studio ajuda a transformar informações dispersas em uma apresentação objetiva.</p>
+      </div>
+      <div class="benefit-grid">
+        <article class="benefit-main"><span class="card-number">01</span><h3>Esteja pronto quando a oportunidade aparecer</h3><p>Manter o currículo atualizado reduz o retrabalho de última hora e facilita adaptar a apresentação para diferentes oportunidades.</p><div class="mini-document"><i></i><i></i><i></i><i></i></div></article>
+        <article><span class="card-number">02</span><h3>Leitura mais rápida</h3><p>Seções organizadas ajudam quem recruta a localizar o que importa.</p></article>
+        <article><span class="card-number">03</span><h3>Versões em outros idiomas</h3><p>Traduza o conteúdo para português, inglês ou espanhol e revise antes de exportar.</p></article>
+        <article class="benefit-wide"><span class="card-number">04</span><div><h3>Sua experiência real, melhor apresentada</h3><p>A ferramenta melhora a estrutura e o visual sem criar informações que não existem.</p></div><span class="quote">“Comunicar melhor não é inventar mais.”</span></article>
+      </div>
+    </section>
+
+    <section class="how-it-works section">
+      <div class="section-heading compact"><span class="kicker">Como funciona</span><h2>Do conteúdo ao PDF em quatro etapas.</h2></div>
+      <div class="step-flow">
+        <article><span>1</span><h3>Preencha</h3><p>Adicione dados, resumo, experiências, formação e competências.</p></article>
+        <article><span>2</span><h3>Personalize</h3><p>Escolha o modelo que melhor representa seu perfil.</p></article>
+        <article><span>3</span><h3>Traduza</h3><p>Gere uma versão do conteúdo no idioma desejado.</p></article>
+        <article><span>4</span><h3>Exporte</h3><p>Revise o preview e salve o currículo em PDF.</p></article>
+      </div>
+    </section>
+
+    <section class="templates section" id="modelos">
+      <div class="section-heading row-heading"><div><span class="kicker">Modelos profissionais</span><h2>Escolha o estilo do seu currículo.</h2></div><a href="#editor" class="text-link">Abrir editor →</a></div>
+      <div class="template-gallery" id="templateGallery">
+        <button class="template-choice active" type="button" data-template="classic"><span class="template-thumb thumb-classic"><i></i><i></i><i></i><i></i></span><b>Classic</b><small>Tradicional e objetivo</small></button>
+        <button class="template-choice" type="button" data-template="modern"><span class="template-thumb thumb-modern"><i></i><i></i><i></i><i></i></span><b>Modern</b><small>Atual e versátil</small></button>
+        <button class="template-choice" type="button" data-template="executive"><span class="template-thumb thumb-executive"><i></i><i></i><i></i><i></i></span><b>Executive</b><small>Elegante e sóbrio</small></button>
+        <button class="template-choice" type="button" data-template="minimal"><span class="template-thumb thumb-minimal"><i></i><i></i><i></i><i></i></span><b>Minimal</b><small>Limpo e direto</small></button>
+        <button class="template-choice" type="button" data-template="corporate"><span class="template-thumb thumb-corporate"><i></i><i></i><i></i><i></i></span><b>Corporate</b><small>Estruturado e formal</small></button>
+        <button class="template-choice" type="button" data-template="creative"><span class="template-thumb thumb-creative"><i></i><i></i><i></i><i></i></span><b>Creative</b><small>Visual e expressivo</small></button>
+        <button class="template-choice" type="button" data-template="tech"><span class="template-thumb thumb-tech"><i></i><i></i><i></i><i></i></span><b>Tech</b><small>Escuro e tecnológico</small></button>
+      </div>
+    </section>
+
+    <section class="editor-shell" id="editor">
+      <div class="editor-intro">
+        <span class="kicker">Editor de currículo</span><h2>Construa e acompanhe o resultado.</h2><p>Os campos vazios não aparecem no currículo final.</p>
+      </div>
+      <div class="editor-toolbar">
+        <label>Modelo<select id="templateSelect"><option value="classic">Classic</option><option value="modern">Modern</option><option value="executive">Executive</option><option value="minimal">Minimal</option><option value="corporate">Corporate</option><option value="creative">Creative</option><option value="tech">Tech</option></select></label>
+        <label>Idioma original<select id="sourceLanguageSelect"><option value="auto">Detectar automaticamente</option><option value="pt">Português</option><option value="en">English</option><option value="es">Español</option></select></label>
+        <label>Idioma final<select id="cvLanguageSelect"><option value="pt">Português</option><option value="en">English</option><option value="es">Español</option></select></label>
+        <button class="button button-teal" id="translateBtn" type="button">Traduzir CV</button>
+        <button class="button button-light" id="clearBtn" type="button">Limpar</button>
+        <button class="button button-primary" id="printBtn" type="button">Salvar em PDF</button>
       </div>
 
       <div class="workspace-grid">
         <form class="editor-panel" id="cvForm">
-          <div class="progress-wrap">
-            <div class="progress-info"><span>Progresso do CV</span><strong id="progressText">0%</strong></div>
-            <div class="progress-track"><span id="progressBar"></span></div>
-          </div>
-
-          <details open>
-            <summary>Dados pessoais</summary>
-            <div class="form-grid">
-              <label class="field field-full">Nome completo<input id="fullName" data-save type="text" placeholder="Ex.: Marcio Bonas"></label>
-              <label class="field">Título profissional<input id="jobTitle" data-save type="text" placeholder="Ex.: Talent Acquisition Partner"></label>
-              <label class="field">Localização<input id="location" data-save type="text" placeholder="Ex.: São Paulo, Brasil"></label>
-              <label class="field">E-mail<input id="email" data-save type="email" placeholder="nome@email.com"></label>
-              <label class="field">Telefone<input id="phone" data-save type="tel" placeholder="+55 11 99999-9999"></label>
-              <label class="field field-full">LinkedIn<input id="linkedin" data-save type="text" placeholder="linkedin.com/in/seuperfil"></label>
-            </div>
-          </details>
-
-          <details open>
-            <summary>Resumo profissional</summary>
-            <label class="field">Conte sua trajetória de forma objetiva
-              <textarea id="summary" data-save rows="7" maxlength="900" placeholder="Quem você é profissionalmente, sua especialidade, escopo e o valor que pode gerar."></textarea>
-              <span class="counter"><span id="summaryCount">0</span>/900</span>
-            </label>
-            <button class="ai-button" type="button" data-ai-placeholder="summary">✨ Melhorar com IA <span>em breve</span></button>
-          </details>
-
-          <details open>
-            <summary>Experiência profissional</summary>
-            <div id="experienceFields"></div>
-            <button class="add-button" id="addExperienceBtn" type="button">+ Adicionar experiência</button>
-          </details>
-
-          <details>
-            <summary>Formação</summary>
-            <div class="form-grid">
-              <label class="field">Curso<input id="degree" data-save type="text" placeholder="Ex.: Administração"></label>
-              <label class="field">Instituição<input id="school" data-save type="text" placeholder="Nome da instituição"></label>
-              <label class="field">Período<input id="educationPeriod" data-save type="text" placeholder="Ex.: 2018 – 2022"></label>
-            </div>
-          </details>
-
-          <details>
-            <summary>Competências e idiomas</summary>
-            <label class="field">Competências
-              <input id="skills" data-save type="text" placeholder="Recrutamento, Sourcing, Stakeholders">
-              <small>Separe as competências por vírgulas.</small>
-            </label>
-            <label class="field">Idiomas
-              <input id="languages" data-save type="text" placeholder="Português nativo, Inglês avançado">
-              <small>Separe os idiomas por vírgulas.</small>
-            </label>
-          </details>
-
-          <div class="privacy-note"><strong>Privacidade no MVP:</strong> os dados são armazenados somente no navegador deste dispositivo por meio de localStorage.</div>
+          <div class="progress-wrap"><div class="progress-info"><span>Progresso do CV</span><strong id="progressText">0%</strong></div><div class="progress-track"><span id="progressBar"></span></div></div>
+          <details open><summary>Dados pessoais</summary><div class="form-grid">
+            <label class="field field-full">Nome completo<input id="fullName" type="text" placeholder="Ex.: Nome Sobrenome"></label>
+            <label class="field">Título profissional<input id="jobTitle" type="text" placeholder="Ex.: Talent Acquisition Partner"></label>
+            <label class="field">Localização<input id="location" type="text" placeholder="Ex.: São Paulo, Brasil"></label>
+            <label class="field">E-mail<input id="email" type="email" placeholder="nome@email.com"></label>
+            <label class="field">Telefone<input id="phone" type="tel" placeholder="+55 11 99999-9999"></label>
+            <label class="field field-full">LinkedIn<input id="linkedin" type="text" placeholder="linkedin.com/in/seuperfil"></label>
+          </div></details>
+          <details open><summary>Resumo profissional</summary><label class="field">Conte sua trajetória de forma objetiva<textarea id="summary" rows="7" maxlength="900" placeholder="Especialidade, escopo, experiência e o valor que você pode gerar."></textarea><span class="counter"><span id="summaryCount">0</span>/900</span></label><button class="ai-button" type="button" disabled>Melhorar com IA <span>próxima versão</span></button></details>
+          <details open><summary>Experiência profissional</summary><div id="experienceFields"></div><button class="add-button" id="addExperienceBtn" type="button">+ Adicionar experiência</button></details>
+          <details><summary>Formação</summary><div class="form-grid"><label class="field">Curso<input id="degree" type="text" placeholder="Ex.: Administração"></label><label class="field">Instituição<input id="school" type="text" placeholder="Nome da instituição"></label><label class="field">Período<input id="educationPeriod" type="text" placeholder="Ex.: 2018 – 2022"></label></div></details>
+          <details><summary>Competências e idiomas</summary><label class="field">Competências<input id="skills" type="text" placeholder="Recrutamento, Sourcing, Stakeholders"><small>Separe por vírgulas.</small></label><label class="field">Idiomas<input id="languages" type="text" placeholder="Português nativo, Inglês avançado"><small>Separe por vírgulas.</small></label></details>
+          <div class="translation-note"><strong>Tradução:</strong> escolha o idioma original e o idioma final. Revise o conteúdo antes de exportar.</div>
+          <div class="privacy-note"><strong>Privacidade:</strong> seus dados ficam neste navegador. A tradução envia somente os textos ao serviço externo MyMemory.</div>
         </form>
 
         <aside class="preview-panel">
-          <div class="preview-toolbar"><span>Preview</span><span class="autosave-status" id="saveStatus">Salvo automaticamente</span></div>
+          <div class="preview-toolbar"><span>Preview do CV</span><span class="autosave-status" id="saveStatus">Salvo automaticamente</span></div>
           <article class="resume template-classic" id="resumePreview">
-            <header class="resume-header">
-              <h1 id="previewName" hidden></h1>
-              <p id="previewTitle" hidden></p>
-              <div class="contact-line" id="previewContact" hidden></div>
-              <div class="contact-line" id="previewLinkedin"></div>
-            </header>
-            <section class="resume-section" id="summarySection" hidden>
-              <h2 data-i18n="summary">Resumo profissional</h2>
-              <p id="previewSummary"></p>
-            </section>
-            <section class="resume-section" id="experienceSection" hidden>
-              <h2 data-i18n="experience">Experiência profissional</h2>
-              <div id="previewExperiences"></div>
-            </section>
-            <section class="resume-section" id="educationSection" hidden>
-              <h2 data-i18n="education">Formação</h2>
-              <div id="previewEducation"></div>
-            </section>
-            <section class="resume-section two-columns" id="additionalSection" hidden>
-              <div id="skillsSection" hidden><h2 data-i18n="skills">Competências</h2><div class="tag-list" id="previewSkills"></div></div>
-              <div id="languagesSection" hidden><h2 data-i18n="languages">Idiomas</h2><div class="tag-list" id="previewLanguages"></div></div>
-            </section>
+            <header class="resume-header" id="resumeHeader" hidden><h1 id="previewName" hidden></h1><p id="previewTitle" hidden></p><div class="contact-line" id="previewContact" hidden></div><div class="contact-line" id="previewLinkedin" hidden></div></header>
+            <section class="resume-section" id="summarySection" hidden><h2 data-i18n="summary">Resumo profissional</h2><p id="previewSummary"></p></section>
+            <section class="resume-section" id="experienceSection" hidden><h2 data-i18n="experience">Experiência profissional</h2><div id="previewExperiences"></div></section>
+            <section class="resume-section" id="educationSection" hidden><h2 data-i18n="education">Formação</h2><div id="previewEducation"></div></section>
+            <section class="resume-section two-columns" id="additionalSection" hidden><div id="skillsSection" hidden><h2 data-i18n="skills">Competências</h2><div class="tag-list" id="previewSkills"></div></div><div id="languagesSection" hidden><h2 data-i18n="languages">Idiomas</h2><div class="tag-list" id="previewLanguages"></div></div></section>
           </article>
         </aside>
       </div>
     </section>
 
-    <section class="principles" id="principios">
-      <div><span class="eyebrow">Princípio do produto</span><h2>A IA não cria sua carreira.</h2><p>Ela ajudará você a apresentar melhor a carreira que realmente construiu. Nenhuma habilidade, resultado ou experiência deverá ser inventada.</p></div>
-      <div class="future-card"><span>Próxima evolução</span><h3>Análise CV × Vaga</h3><p>Evidências encontradas, lacunas, palavras-chave e pontos que precisam ser validados.</p><button class="button button-secondary" disabled>Disponível na versão com IA</button></div>
+    <section class="principles section" id="principios">
+      <div class="principle-card"><span class="kicker light">Princípio do produto</span><h2>A ferramenta melhora a apresentação. Não inventa a trajetória.</h2><p>Nenhuma habilidade, resultado ou experiência deve ser criada sem base nas informações fornecidas pela própria pessoa.</p><a class="button button-white" href="#editor">Criar meu CV</a></div>
+      <div class="next-card"><span>Próxima evolução</span><h3>Análise CV × Vaga</h3><p>Evidências encontradas, lacunas, palavras-chave e pontos para validar, sempre com transparência.</p><ul><li>Melhoria assistida de textos</li><li>Comparação com job description</li><li>Sugestões sem inventar experiência</li></ul></div>
     </section>
   </main>
 
-  <footer><strong>CV Studio</strong><span>Feito para transformar experiência real em comunicação profissional.</span></footer>
-
+  <footer><a class="brand footer-brand" href="#inicio"><span class="brand-icon">CV</span><span>CV Studio</span></a><p>Experiência real, apresentada com clareza.</p><a href="#inicio">Voltar ao início ↑</a></footer>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
   <script src="app.js"></script>
 </body>
