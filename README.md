@@ -1,47 +1,38 @@
-# CV Studio — MVP 3 com tradução integral
+# CV Studio — MVP 1
 
-Esta versão traduz os textos preenchidos no currículo ao selecionar Português, Inglês ou Espanhol.
+Primeira versão funcional de um editor de currículos com preview em tempo real.
 
-## Importante
+## Funcionalidades
 
-A tradução usa um backend seguro. GitHub Pages sozinho não executa a pasta `api`. Para a tradução funcionar, importe este repositório na Vercel e configure as variáveis de ambiente abaixo.
+- Página inicial responsiva
+- Editor de dados pessoais, resumo, experiências, formação, competências e idiomas
+- Preview em tempo real
+- Sete estilos visuais: Classic, Modern, Executive, Minimal, Corporate, Creative e Tech
+- Seleção do idioma do currículo: Português, Inglês e Espanhol
+- Ocultação automática de campos e seções vazias
+- Salvamento automático no navegador (`localStorage`)
+- Botão para imprimir ou salvar em PDF
+- Exemplo preenchido para demonstração
+- Layout responsivo para desktop e celular
 
-## Variáveis na Vercel
+## Publicar no GitHub Pages
 
-- `AZURE_TRANSLATOR_KEY`
-- `AZURE_TRANSLATOR_REGION`
-- `AZURE_TRANSLATOR_ENDPOINT` (opcional; padrão: `https://api.cognitive.microsofttranslator.com`)
+1. Crie um repositório público no GitHub.
+2. Envie `index.html`, `styles.css` e `app.js` para a raiz do repositório.
+3. Em **Settings > Pages**, escolha **Deploy from a branch**.
+4. Selecione a branch `main` e a pasta `/ (root)`.
+5. Salve a configuração.
 
-Nunca coloque a chave do Azure no `app.js`, no `index.html` ou em qualquer arquivo público.
+## Importante sobre privacidade
 
-## Publicação
+Esta versão não possui backend. Os dados são armazenados somente no navegador do dispositivo por meio de `localStorage`.
 
-1. Envie todos os arquivos e a pasta `api` para o repositório.
-2. Importe o repositório na Vercel.
-3. Adicione as variáveis de ambiente.
-4. Faça o deploy.
+## Próximas versões sugeridas
 
-## O que é traduzido
-
-- Título profissional
-- Resumo profissional
-- Curso e instituição
-- Competências
-- Idiomas
-- Cargo, empresa, período e descrição de cada experiência
-- Títulos fixos das seções
-
-Nome, e-mail, telefone, localização e LinkedIn não são traduzidos.
-
-## Tradução completa
-
-A versão 3 permite traduzir os campos do currículo para português, inglês ou espanhol. A pessoa escolhe o idioma original ou usa a detecção automática e depois seleciona o idioma final.
-
-A tradução utiliza a API pública MyMemory. Portanto, ao acionar a tradução, o conteúdo textual é enviado ao serviço externo e deve ser revisado antes da exportação. A API pública possui limites de uso.
-
-## Melhorias visuais
-
-- Interface com formas mais arredondadas e composição visual mais leve
-- Seção explicando por que é importante manter o currículo atualizado
-- Área de benefícios e propósito da ferramenta
-- Controles de modelo, idioma, tradução e exportação agrupados
+- Importação estruturada de CV existente
+- Seções adicionais e reordenação
+- Exportação PDF aprimorada
+- Backend seguro
+- IA para melhoria de texto sem inventar informações
+- Análise baseada em evidências entre CV e descrição da vaga
+- Contas e histórico de versões

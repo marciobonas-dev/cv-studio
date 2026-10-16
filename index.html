@@ -14,12 +14,11 @@
   <header class="topbar">
     <a class="brand" href="#inicio" aria-label="CV Studio - início">
       <span class="brand-mark">CV</span>
-      <span>Currículo<span class="brand-accent">+</span></span>
+      <span>CV Studio</span>
     </a>
     <nav class="topnav" aria-label="Navegação principal">
       <a href="#como-funciona">Como funciona</a>
       <a href="#editor">Editor</a>
-      <a href="#beneficios">Por que atualizar?</a>
       <a href="#principios">Nossa proposta</a>
     </nav>
     <button class="button button-small button-outline" id="loadExampleBtn">Carregar exemplo</button>
@@ -28,9 +27,9 @@
   <main>
     <section class="hero" id="inicio">
       <div class="hero-content">
-        <span class="eyebrow">Seu currículo, mais forte e mais claro.</span>
-        <h1>Sua experiência merece um currículo que abra portas.</h1>
-        <p>Organize sua trajetória, escolha um design profissional, traduza o conteúdo e acompanhe o resultado em tempo real. Simples de usar e construído para valorizar experiências reais.</p>
+        <span class="eyebrow">Currículo mais claro. História sempre verdadeira.</span>
+        <h1>Transforme sua experiência em um CV que chama atenção.</h1>
+        <p>Crie, organize e visualize seu currículo em tempo real. Esta primeira versão funciona totalmente no navegador e não envia seus dados para nenhum servidor.</p>
         <div class="hero-actions">
           <a class="button button-primary" href="#editor">Criar meu CV</a>
           <button class="button button-secondary" id="exampleHeroBtn">Ver um exemplo</button>
@@ -39,7 +38,6 @@
           <li>✓ Preview em tempo real</li>
           <li>✓ Salvo no seu navegador</li>
           <li>✓ Pronto para imprimir em PDF</li>
-          <li>✓ Tradução completa do conteúdo</li>
         </ul>
       </div>
       <div class="hero-visual" aria-hidden="true">
@@ -62,20 +60,6 @@
       <article><span>01</span><h2>Preencha</h2><p>Adicione seus dados, resumo, experiências, formação e competências.</p></article>
       <article><span>02</span><h2>Revise</h2><p>Acompanhe o resultado no preview e deixe o conteúdo objetivo e fácil de ler.</p></article>
       <article><span>03</span><h2>Exporte</h2><p>Imprima ou salve o currículo final em PDF diretamente pelo navegador.</p></article>
-    </section>
-
-    <section class="benefits" id="beneficios">
-      <div class="section-intro">
-        <span class="eyebrow">Por que manter o CV atualizado?</span>
-        <h2>O currículo certo ajuda sua experiência a ser entendida rapidamente.</h2>
-        <p>O Currículo+ existe para transformar informações dispersas em uma apresentação clara, profissional e adaptável a diferentes oportunidades, sem criar experiências que a pessoa não possui.</p>
-      </div>
-      <div class="benefit-grid">
-        <article class="benefit-card featured"><span class="benefit-icon">01</span><h3>Clareza para quem recruta</h3><p>Informações organizadas facilitam a identificação de experiência, escopo, competências e formação.</p></article>
-        <article class="benefit-card"><span class="benefit-icon">02</span><h3>Pronto para oportunidades</h3><p>Um CV atualizado reduz o trabalho de última hora quando surge uma vaga relevante.</p></article>
-        <article class="benefit-card"><span class="benefit-icon">03</span><h3>Versões em vários idiomas</h3><p>Escreva o conteúdo e gere uma versão em português, inglês ou espanhol com poucos cliques.</p></article>
-        <article class="benefit-card"><span class="benefit-icon">04</span><h3>Experiência real, melhor apresentada</h3><p>A ferramenta ajuda a comunicar melhor sua trajetória sem inventar habilidades, resultados ou responsabilidades.</p></article>
-      </div>
     </section>
 
     <section class="workspace" id="editor">
@@ -103,7 +87,6 @@
               <option value="en">English</option>
               <option value="es">Español</option>
             </select>
-            <small id="translationStatus" class="translation-status">O conteúdo será traduzido ao trocar o idioma.</small>
           </label>
           <button class="button button-outline" id="clearBtn">Limpar</button>
           <button class="button button-primary" id="printBtn">Salvar em PDF</button>
@@ -165,8 +148,7 @@
             </label>
           </details>
 
-          <div class="translation-note"><strong>Tradução completa:</strong> selecione o idioma original, escolha o idioma final e use “Traduzir CV”. A tradução substituirá o texto dos campos, mas você poderá revisar tudo antes de gerar o PDF.</div>
-          <div class="privacy-note"><strong>Privacidade:</strong> os dados ficam salvos neste navegador. Ao usar a tradução, os trechos do CV são enviados ao serviço externo de tradução MyMemory.</div>
+          <div class="privacy-note"><strong>Privacidade no MVP:</strong> os dados são armazenados somente no navegador deste dispositivo por meio de localStorage.</div>
         </form>
 
         <aside class="preview-panel">
